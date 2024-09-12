@@ -5,6 +5,20 @@ load(
     "ll_test",
 )
 
+string_flag(
+    name = "current_gpu_configuration",
+    build_setting_default = "sm70",
+    values = ["sm70", "sm75"],
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "gpu_enabled",
+    flag_values = {
+        ":current_gpu_configuration": "sm70",
+    },
+)
+
 [
     (
         ll_binary(
@@ -23,7 +37,7 @@ load(
             tags = [name],
             visibility = ["@//:__pkg__"],
             exec_properties = select({
-                "gpu": {
+                ":gpu_enabled": {
                     "Platform": "gpu-nodes",
                 }, 
                 "//conditions:default": {}
