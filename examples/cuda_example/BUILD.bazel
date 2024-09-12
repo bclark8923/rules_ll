@@ -13,9 +13,6 @@ load(
             compilation_mode = "cuda_{}".format(name),
             compile_flags = flags,
             visibility = ["@//:__pkg__"],
-            exec_properties = {
-                "Platform": "gpu-nodes",
-            },
         ),
         ll_test(
             name = "{}_test".format(name),
@@ -25,6 +22,12 @@ load(
             compile_flags = flags,
             tags = [name],
             visibility = ["@//:__pkg__"],
+            exec_properties = select({
+                "gpu": {
+                    "Platform": "gpu-nodes",
+                }, 
+                "//conditions:default": {}
+            }),
         ),
     )
     for (name, flags) in [
