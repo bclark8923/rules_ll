@@ -74,6 +74,9 @@
               LL_CFLAGS = "-I${openssl.dev}/include";
               LL_LDFLAGS = "-L${openssl.out}/lib";
             };
+            local-remote-execution.settings = {
+              inherit (nativelink.packages.${system}.lre-cc.meta) Env;
+            };
             devShells.default = pkgs.mkShell {
               nativeBuildInputs =
                 let
