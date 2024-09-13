@@ -23,7 +23,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nativelink = {
-      url = "github:TraceMachina/nativelink/75105df746c626da76f74e412764e6755296a8ab";
+      url = "github:TraceMachina/nativelink/c42fd0d9f93b5f41f2df6d23d529ce40d1568c55";
       inputs.flake-utils.follows = "flake-utils";
       inputs.flake-parts.follows = "flake-parts";
       inputs.pre-commit-hooks.follows = "pre-commit-hooks";
