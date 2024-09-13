@@ -38,7 +38,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nativelink.follows = "nativelink";
-      inputs.pre-commit-hooks.follows = "git-hooks";
+      inputs.pre-commit-hooks.follows = "pre-commit-hooks";
     };
   };
 
