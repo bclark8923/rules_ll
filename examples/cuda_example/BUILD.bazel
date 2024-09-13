@@ -9,15 +9,15 @@ load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 
 string_flag(
     name = "current_gpu_configuration",
-    build_setting_default = "sm70",
-    values = ["sm70", "sm75"],
+    build_setting_default = "sm_70",
+    values = ["sm_70", "sm_75"],
     visibility = ["//visibility:public"],
 )
 
 config_setting(
     name = "gpu_enabled",
     flag_values = {
-        ":current_gpu_configuration": "sm70",
+        ":current_gpu_configuration": "sm_70",
     },
 )
 
