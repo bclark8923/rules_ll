@@ -26,7 +26,7 @@
       url = "github:TraceMachina/nativelink/c42fd0d9f93b5f41f2df6d23d529ce40d1568c55";
       inputs.flake-utils.follows = "flake-utils";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.pre-commit-hooks.follows = "pre-commit-hooks";
+      inputs.pre-commit-hooks.follows = "git-hooks";
     };
     rules_ll = {
       # If you use this file as template, substitute the line below with this,
@@ -38,7 +38,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nativelink.follows = "nativelink";
-      inputs.pre-commit-hooks.follows = "pre-commit-hooks";
+      inputs.pre-commit-hooks.follows = "git-hooks";
     };
   };
 
