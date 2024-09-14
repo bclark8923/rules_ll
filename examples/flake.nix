@@ -74,6 +74,12 @@
               LL_CFLAGS = "-I${openssl.dev}/include";
               LL_LDFLAGS = "-L${openssl.out}/lib";
             };
+            _module.args.pkgs = import self.inputs.nixpkgs {
+              inherit system;
+              # CUDA support
+              config.allowUnfree = true;
+              config.cudaSupport = true;
+            };
             local-remote-execution.settings = {
               inherit (nativelink.packages.${system}.lre-cc.meta) Env;
             };
