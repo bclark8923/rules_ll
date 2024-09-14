@@ -57,4 +57,5 @@ try-import %workspace%/.bazelrc.user
 build:nativelink --remote_cache=grpcs://cas-bclark8923-d21fad.build-faster.nativelink.net
 build:nativelink --bes_backend=grpcs://bes-bclark8923-d21fad.build-faster.nativelink.net
 build:nativelink --bes_results_url=https://app.nativelink.com/a/bclark8923/build
+build:nativelink --remote_header=x-nativelink-project=gpu-test
 build:nativelink --remote_timeout=600
