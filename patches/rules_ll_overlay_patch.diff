@@ -1530,7 +1530,7 @@ index 000000000000..ad054f2b9641
 +
 +        # This seems to be forgotten in CMake.
 +        "src/memory_resource_init_helper.h",
-+    ] + LIBCXX_MODULE_STD_INCLUDE_SOURCES_FILES,
++    ], # + LIBCXX_MODULE_STD_INCLUDE_SOURCES_FILES,
 +    compilation_mode = "bootstrap",
 +    compile_flags = [
 +        "-std=c++2b",
@@ -1563,9 +1563,9 @@ index 000000000000..ad054f2b9641
 +    exposed_hdrs = [
 +        "//libcxx:headers",
 +    ],
-+    exposed_interfaces = {
-+        ":std.cppm": "std",
-+    },
++    # exposed_interfaces = {
++    #     ":std.cppm": "std",
++    # },
 +    includes = [
 +        "libcxx",  # Used for modules which are included as `modules/std/...`.
 +        "libcxx/src",
