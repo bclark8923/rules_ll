@@ -73,6 +73,9 @@
               inherit pkgs;
               LL_CFLAGS = "-I${openssl.dev}/include";
               LL_LDFLAGS = "-L${openssl.out}/lib";
+              LL_CUDA_TOOLKIT = ""
+              LL_CUDA_DRIVER = ""
+              LL_CUDA_NVCC = ""
             };
             _module.args.pkgs = import self.inputs.nixpkgs {
               inherit system;
