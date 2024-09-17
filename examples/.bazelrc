@@ -59,6 +59,4 @@ build:nativelink --bes_backend=grpcs://bes-bclark8923-d21fad.build-faster.native
 build:nativelink --bes_results_url=https://app.nativelink.com/a/bclark8923/build
 build:nativelink --remote_header=x-nativelink-project=gpu-test
 build:nativelink --remote_timeout=600
-
-build:nativelink-rbe --remote_executor=grpcs://scheduler-bclark8923-d21fad.build-faster.nativelink.net:443
-build:nativelink-rbe --remote_default_exec_properties="container-image=docker://ghcr.io/tracemachina/nativelink-worker-lre-cc:wkv78y3739ivdwjj4njg1g60b5r4cgvd"
+build:nativelink --remote_executor=grpcs://scheduler-bclark8923-d21fad.build-faster.nativelink.net:443
