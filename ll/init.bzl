@@ -4,6 +4,7 @@ Initializer function which should be called in the `WORKSPACE.bazel` file.
 """
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:local.bzl", "local_repository")
 
 CUDA_BUILD_FILE = """
 filegroup(
@@ -14,15 +15,10 @@ filegroup(
 """
 
 def _initialize_rules_ll_impl(_):
-    http_archive(
-        name = "local-remote-execution",
-        urls = [
-            "https://github.com/TraceMachina/nativelink/archive/c42fd0d9f93b5f41f2df6d23d529ce40d1568c55.zip",
-        ],
-        integrity = "sha256-Mbj9ElJLpsgtESsLTOEFWNgmy3jqHBrb1IiH5PPctEs=",
-        # Note: Keep this in sync with `flake.nix` and `devtools/up.sh`.
-        strip_prefix = "nativelink-c42fd0d9f93b5f41f2df6d23d529ce40d1568c55/local-remote-execution",
-    )
+    local_repository(
+         name = "local-remote-execution",
+         path = "../../nativelink/local-remote-execution",
+     )
 
     http_archive(
         name = "zstd",
